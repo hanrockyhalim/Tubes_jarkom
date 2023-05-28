@@ -4,10 +4,12 @@
     <title>File Browser</title>
   </head>
   <body>
-    <h1>File Browser</h1>
+    <h1 data-value="FileBrowser">File Browser</h1>
 
     <input type="file" onchange="handleFileInput(event)" />
+
     <ul class="file-list" style="list-style: decimal">
+      <li><a href="/portfolio.html">portfolio.html</a></li>
       <li><a href="/img.png">img.png</a></li>
       <li><a href="/work.gif">work.gif</a></li>
       <li><a href="/laporan.pdf">example.pdf</a></li>
@@ -18,24 +20,14 @@
   </body>
 </html>
 
-<script>
-  function handleFileInput(event) {
-    const file = event.target.files[0];
-    if (file) {
-      const fileName = file.name;
-      const filePath = "/" + fileName; // Update the file path as needed
-      window.location.href = filePath;
-    }
-  }
-</script>
-
 <style>
   body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 20px;
   }
 
   h1 {
+    font-size: 3rem;
     text-align: center;
   }
 
@@ -53,3 +45,14 @@
     text-decoration: none;
   }
 </style>
+
+<script>
+  function handleFileInput(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const fileName = file.name;
+      const filePath = "/" + fileName; // Update the file path as needed
+      window.location.href = filePath;
+    }
+  }
+</script>
